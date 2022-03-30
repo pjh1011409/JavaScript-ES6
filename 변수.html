@@ -1,0 +1,52 @@
+<script>
+
+var pants = 20;
+var socks = 100;
+
+function 해체분석기(a,b,c){
+    console.log(`${a[1]} : ${b} , ${a[0]}: ${c}`);
+}
+해체분석기`바지${pants} 양말${socks}`
+
+
+var pants = 0;
+var socks = 100;
+
+function 해체분석기2(글자들, 변수1, 변수2){
+    if(변수1 === 0){
+    console.log(`${글자들[0]}다팔렸어요`)
+    }
+
+    
+}
+해체분석기2`바지${pants} 양말${socks}`
+
+var 문자 = 'hello';
+console.log(문자);
+console.log(...문자);
+
+var o1 = { a : 1, b : 2 };
+var o2 = { c : 3, ...o1 };
+console.log(o2);
+
+var o2 = { a : 3, ...o1 }; // var o1 = { a : 1, b : 2};
+var o2 = { a : 3, ...o1 };
+console.log(o2);
+var o1 = { a : 1, b : 2};
+var o2 = { ...o1, a : 3  };
+console.log(o2);
+
+
+var person = {
+    인사 : function(){
+      console.log(this.name + '안녕')
+    }
+}
+  
+var person2 = {
+    name : '손흥민'
+}
+
+person.인사();
+person.인사.apply(person2);
+</script>
