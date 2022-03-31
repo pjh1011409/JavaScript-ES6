@@ -1,0 +1,57 @@
+<script>
+
+// function 기계(이름,나이){
+//   this.name = 이름;
+//   this.age = 나이;
+//   this.sayHi = function(){
+//     console.log('안녕하세요' + this.name + ' 입니다');
+//   }
+// }
+// var 학생1 = new 기계('park',20);
+// var 학생2 = new 기계('Lee',10);
+
+// 학생2.sayHi()
+// console.log(학생1);
+// console.log(학생2);
+
+// function 기계(){
+//   this.name = 'Kim';
+//   this.age = 15;
+// }
+
+// var 학생1 = new 기계();
+// var 학생2 = new 기계();
+// console.log(학생1);
+// console.log(학생2);
+
+
+function constructor(){
+      this.부가세 = (a)=>{
+        return a * 0.1
+      }
+    }
+
+
+var product = new constructor();
+console.log(`부가세 금액은 ${product.부가세(50000)}`);
+
+function 기계(){
+  this.name = 'Kim';
+  this.age = 15;
+}
+
+기계.prototype.gender = '남';
+var 학생1 = new 기계();
+var 학생2 = new 기계();
+console.log(기계.prototype);
+console.log(기계);
+console.log(학생1.gender); //'남'이 출력됩니다
+
+console.log(Array.prototype);
+
+// var obj = {name:"kim"};
+var obj = new Object({name:"kim"});
+console.log(window.obj);
+
+console.log(Window.prototype);
+</script>
