@@ -1,0 +1,90 @@
+<script>
+
+    class 강아지목록 {
+
+        constructor(이름, 색깔) {
+            this.type = 이름;
+            this.color = 색깔;
+        }
+        한살먹기() {
+           
+                this.age++
+            
+
+        }
+    }
+    let 강아지1 = new 강아지목록('말티즈', 'white',5);
+    let 강아지2 = new 강아지목록('진돗개', 'brown');
+
+    console.log(강아지1);
+    console.log(강아지2);
+    강아지1.한살먹기();
+    console.log(강아지1);
+
+    class 고양이목록 extends 강아지목록 {
+
+        constructor(이름, 색깔, 나이) {
+            super(이름, 색깔);
+            this.age = 나이;
+        }
+    }
+
+    let 고양이1 = new 고양이목록('코숏', 'white', 5);
+    let 고양이2 = new 고양이목록('러시안블루', 'brown', 6);
+
+    console.log(고양이1);
+    console.log(고양이2);
+    고양이1.한살먹기();
+    console.log(고양이1);
+
+
+    class Unit {
+
+        constructor() {
+            this.공격력 = 5;
+            this.체력 = 100;
+        }
+        get battlePoint() {
+            return this.공격력 + this.체력;
+        }
+        set heal(체력증가) {
+            this.체력 += 체력증가;
+        }
+    }
+    var 캐릭터1 = new Unit();
+    console.log(캐릭터1);
+    console.log(캐릭터1.battlePoint);
+    캐릭터1.heal = 50;
+    console.log(캐릭터1);
+
+
+
+    var data = {
+        odd: [],
+        even: [],
+        홀짝판별(...rest) {
+            rest.forEach((i)=>{
+                if (i % 2 == 1) {
+                    this.odd.push(i);
+                }
+                else {
+                    this.even.push(i);
+                }
+            })
+
+              
+            
+        },
+        get 숫자졍렬() {
+            return (
+                this.odd = [...this.odd].sort(),
+                this.even = [...this.even].sort()
+            )
+        }
+    }
+    data.홀짝판별(3, 1, 4, 2, 5);
+    console.log(data);
+    data.숫자졍렬;
+    console.log(data);
+
+</script>
