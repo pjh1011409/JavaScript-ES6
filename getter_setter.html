@@ -1,0 +1,45 @@
+<script>
+//     var 사람 = {
+//   name : 'Kim',
+//   age : 30,
+// }
+// 사람.age = 31;
+// console.log(사람.age);
+
+// var 사람2 = {
+//   name : 'Kim',
+//   age : 30,
+//   nextAge(){
+//     return this.age + 1
+//   }
+// }
+// console.log(사람2.nextAge());
+// console.log(사람2.age);
+
+// var 사람3 = {
+//   name : 'Kim',
+//   age : 30,
+//   setAge(나이){
+//     this.age = 나이;
+//   }
+// }
+// 사람3.setAge(40);
+// console.log(사람3.age);
+class 사람 {
+  constructor(){
+    this.name = 'Park';
+    this.age = 20;
+  }
+  get nextAge(){
+    return this.age + 1
+  }
+  set setAge(나이){
+    this.age = 나이;
+  }
+}
+var 사람1 = new 사람();
+사람1.nextAge;
+console.log(사람1.age);
+사람1.setAge = 50;
+console.log(사람1.age);
+</script>
