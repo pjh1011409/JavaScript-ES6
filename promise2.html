@@ -1,0 +1,81 @@
+<!-- <img id="test" src="https://codingapple1.github.io/kona.jpg">
+ -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    // var img = document.querySelector('#test');
+
+    // function Car(result) {
+    //     return new Promise(function (resolve, reject) {
+          
+    //             img.addEventListener('load', function () {
+    //                 resolve('성공');
+    //             })
+            
+         
+    //             img.addEventListener('error', function () {
+    //                 reject('실패');
+    //             })
+            
+    //     })
+    // }
+
+    // Car().then(function(yes){
+    //     console.log(yes);
+    // }).catch(function (no){
+    //     console.log(no);
+    // })
+
+    
+//     var 프로미스 = new Promise(function(resolve, reject){
+//         $.get({
+//         type: "GET",
+//         url: "https://codingapple1.github.io/hello.txt "
+//     }).done(function(result){
+//         resolve(result);
+//     }).fail(function(){
+//         reject();
+//     })
+//     });
+//     프로미스.then(function(result) {
+//   console.log(result);
+// }).catch(function(){
+//     console.log("실패");
+// })
+
+   
+
+ 
+
+    var 프로미스 = new Promise(function (resolve, reject) {
+        $.get({
+            type: "GET",
+            url: "https://codingapple1.github.io/hello.txt "
+        }).done(function (result) {
+            resolve(result);
+        }).fail(function () {
+            reject();
+        })
+    });
+    프로미스.then(function (result) {
+        console.log(result);
+        return 프로미스2("https://codingapple1.github.io/hello2.txt ");
+    }).then(function (result2) {
+        console.log(result2);
+    }).catch(function () {
+        console.log("실패");
+    })
+
+    function 프로미스2(URL){ 
+        return new Promise(function (resolve, reject) {
+            $.get({
+                type: "GET",
+                url: URL
+            }).done(function (result2) {
+                resolve(result2);
+            }).fail(function () {
+                reject();
+            })
+        });
+    }
+</script>

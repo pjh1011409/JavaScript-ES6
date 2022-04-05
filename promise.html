@@ -11,15 +11,78 @@
     //     console.log("실패");
     // })
 
-    var promise = new promise(()=>{
-        setTimeout(function(){
-            성공();
-        },1000);
-    })
-    promise.then(function(result){
-        console.log(result + ":"+ "성공");
-    }).catch(function(){
-        console.log("실패");
-    })
+//     var 프로미스 = new Promise(function(성공, 실패){
+//   setTimeout(function(){
+//     실패();
+//   }, 5000);
+// });
 
+// 프로미스.then(function(){
+//   console.log(프로미스);
+// }).catch(function(){
+//     console.log(프로미스);
+// });
+
+
+// function study() {
+//     console.log("열심히 공부를 합니다.");
+// }
+// function arriveAtSchool_asis() {
+//     return new Promise(function(resolve){
+//         setTimeout(function() {
+//             console.log("학교에 도착했습니다.");
+//             resolve();
+//         }, 1000);
+//     });
+// }
+// goToSchool();
+// arriveAtSchool_asis().then(function(){
+//     study();
+// });
+
+// function goToSchool(arriveParameter){
+//     console.log("학교에 갑니다.");
+//     arriveParameter(study);
+    
+// }
+// function arriveAtSchool_asis(studyParameter) {
+//     setTimeout(function() {
+//         console.log("학교에 도착했습니다.");
+//         studyParameter();
+//     }, 1000);
+    
+// }
+
+function arriveAtSchool(status) {
+    return new Promise(function(resolve, reject){
+        setTimeout(function() {   
+            if(status === 1) {
+                resolve("학교에 도착했습니다.");
+            } else {
+                reject("중간에 넘어져 다쳤습니다.");
+            }
+        }, 1000);
+    });
+}
+
+function goToSchool() {
+    console.log("학교에 갑니다.");
+}
+function cure() {
+    console.log("양호실에 가서 약을 발랐습니다.");
+}
+function study() {
+    console.log("열심히 공부를 합니다.");
+}
+
+goToSchool();
+arriveAtSchool(2)
+.then(function(res){
+    console.log(res);
+    study();
+})
+.catch(function(err){
+    console.log(err);
+    cure();
+});
 </script>
