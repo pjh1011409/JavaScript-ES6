@@ -4,6 +4,16 @@ person.weight = 100;
 
 var weight = Symbol('내 진짜 몸무게');
 person[weight] = 200;
+// var height = Symbol('내 진짜 키');
+// person[height] = 175;
 
 console.log(person);
+// console.log(person.height);
+for(var key in person){
+    console.log(person[key]);
+}
+
+var array = [2,3,4];
+console.log(array[Symbol.iterator]());
+console.log(array[Symbol])
 </script>
